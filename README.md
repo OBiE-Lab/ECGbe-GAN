@@ -9,7 +9,7 @@
 1. Naval Medical Research Unit - Dayton, Wright-Patterson Air Force Base, OH, USA
 2. Oak Ridge Institute for Science and Education, Oak Ridge, TN, USA 
 
-**Peter Le** 
+**Peter Le**  
 4. Air Force Research Laboratory, 711th Human Performance Wing, Wright-Patterson Air Force Base, OH, USA
 
 ## Abstract
