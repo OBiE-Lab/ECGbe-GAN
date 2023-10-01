@@ -29,7 +29,7 @@ def extractdf(data_path):
 
 
 # Specify paths
-path = "./Experimental Predictions/"
+path = "../Data/Experimental Predictions/"
 
 # Extract the data as dataframes stored into lists
 data_list, file_list = extractdf(path)
@@ -37,6 +37,7 @@ data_list, file_list = extractdf(path)
 # print("Files in the dataset:", file_list)
 
 app = dash.Dash(__name__)
+server = app.server
 
 # Define the app layout
 app.layout = html.Div([
@@ -49,8 +50,8 @@ app.layout = html.Div([
     dcc.Dropdown(
         id='method-dropdown',
         options=[{'label': method, 'value': method}
-                 for method in ['RAW', 'HPF', 'ECGbe-GAN', 'Supervised']],
-        value=['RAW', 'ECGbe-GAN'],
+                 for method in ['Raw', 'HPF', 'ECGbe-GAN', 'Supervised']],
+        value=['Raw', 'ECGbe-GAN'],
         multi=True
     ),
     dcc.Graph(id='emg-plot')
@@ -64,7 +65,7 @@ app.layout = html.Div([
 )
 def update_figure(selected_movement, selected_methods):
     method_colors = {
-        'RAW': 'black',
+        'Raw': 'black',
         'ECGbe-GAN': '#1E90FF',  # Dodger Blue
         'HPF': '#ff7f0e',   # Orange
         'Supervised': '#2ca02c'   # Green
@@ -122,7 +123,6 @@ def update_figure(selected_movement, selected_methods):
         # set l and r to center the plot
         margin=dict(l=10, r=10, t=100, b=50, autoexpand=True),
     )
-
     return fig
 
 
